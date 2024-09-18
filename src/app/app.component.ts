@@ -9,7 +9,21 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Douglas-Cassidy-Learning-Angular';
-  name = "Douglas";
-  course = "MAD307"
+  title: string = "Learning Angular";
+  user: User = {
+    id: 839438,
+    firstName: "Douglas",
+    lastName: "Cassidy",
+    department: "Mobile Application Development",
+    courses: ["Java", "Javascript Frameworks", "PHP & MYSQL", "Portfolio Development"],
+    courseDuration: 3}
 }
+export interface User {
+  id: number,
+  firstName: string,
+  lastName: string,
+  department: string,
+  courses : string[],
+  courseDuration: number;
+}
+

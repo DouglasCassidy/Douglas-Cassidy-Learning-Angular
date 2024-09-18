@@ -1,10 +1,21 @@
 <html lang="en">
   <head>
     <title>Douglas Cassidy - Learning Angular</title>
+    <link rel="stylesheet" href="app.component.css">
   </head>
 
   <body>
   <h1>Learning Angular</h1>
-  <p>Welcome {{ name }}, to {{ course }}!</p>
+  <div>
+    <h1>{{user.firstName}} {{user.lastName}}</h1>
+      <ul>
+        <li><b>Student ID:</b> {{user.id}}</li>
+        <li><b>Department:</b>{{user.department}}</li>
+      </ul>
+    <div>
+      <p><b>Courses Currently Taking:</b> {{user.courses}}</p>
+      <p><b>Course Duration:</b> {{user.courseDuration}} years</p>
+    </div>
+  </div>
   </body>
 </html>
