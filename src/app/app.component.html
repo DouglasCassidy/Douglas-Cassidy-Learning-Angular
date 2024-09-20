@@ -12,10 +12,10 @@
         <li><b>Student ID:</b> {{user.id}}</li>
         <li><b>Department:</b>{{user.department}}</li>
       </ul>
-    <div>
-      <p><b>Courses Currently Taking:</b> {{user.courses}}</p>
-      <p><b>Course Duration:</b> {{user.courseDuration}} years</p>
+    <ul>
+      <li><p><b>Courses Currently Taking:</b> {{user.courses.join(", ")}}</p></li>
+      <li><p><b>Course Duration:</b> {{user.courseDuration}} years</p></li>
+    </ul>
     </div>
-  </div>
   </body>
 </html>

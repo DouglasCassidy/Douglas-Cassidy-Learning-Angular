@@ -1,0 +1,32 @@
+html{
+  margin: 0;
+  padding: 10px;
+  background-image:linear-gradient(45deg, red, darkblue);
+  border-radius: 10px;
+}
+body h1{
+  color: white;
+  text-shadow: black 5px 5px 5px;
+}
+div{
+  display:flex;
+  flex-direction: column;
+  padding: 5px;
+  background-image:linear-gradient(45deg, purple, red);
+  color:white;
+  text-shadow: 5px 5px 5px black;
+  box-shadow: 5px 5px 20px black;
+  border-radius: 10px;
+}
+@media screen and (min-width:800px){
+  div{
+    flex-direction: row;
+  }
+}
+li{
+  border: 2px solid white;
+  background-image:linear-gradient(black, darkred);
+  padding: 5px;
+  margin: 5px;
+  border-radius: 10px;
+}
