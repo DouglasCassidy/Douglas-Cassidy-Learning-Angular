@@ -15,7 +15,7 @@ export class AppComponent {
     firstName: "Douglas",
     lastName: "Cassidy",
     department: "Mobile Application Development",
-    courses: ["Java Programming", "Javascript Frameworks", "PHP & MYSQL", "Portfolio Development"],
+    courses: ["Java", "Javascript Frameworks", "PHP & MYSQL", "Portfolio Development"],
     courseDuration: 3}
 }
 export interface User {
