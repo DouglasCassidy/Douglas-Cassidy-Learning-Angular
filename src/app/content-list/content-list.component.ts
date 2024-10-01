@@ -1,32 +1,20 @@
-import {Component, input, OnInit} from '@angular/core';
+import {Component, Input, input, OnInit} from '@angular/core';
 import {ContentListItemComponent} from "../content-list-item/content-list-item.component";
 import {NgForOf, NgIf} from "@angular/common";
-import {User} from "../app.component";
+import {colors} from "@angular/cli/src/utilities/color";
+import {Course} from "../INT/course";
 
 @Component({
   selector: 'app-content-list',
   standalone: true,
   imports: [
-    ContentListItemComponent,
     NgForOf,
-    NgIf
+    NgIf,
+    ContentListItemComponent,
   ],
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.css'
 })
-export class ContentListComponent implements OnInit{
-  contentItem?: User;
-  constructor() {
-
-  }
-  ngOnInit() {
-    this.contentItem = {
-      id: 839438,
-      firstName: "Douglas",
-      lastName: "Cassidy",
-      department: "Mobile application Development",
-      courses: ["Java Programming", "Javascript Frameworks", "PHP & MYSQL", "Portfolio Development"],
-      courseDuration: 3
-    };
-  }
+export class ContentListComponent {
+  courseList?: Course[] = [{body: "Detail 1"}]
 }
