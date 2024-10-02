@@ -1,18 +1,8 @@
-import {Component} from '@angular/core';
-import {ContentListItemComponent} from "../content-list-item/content-list-item.component";
-import {NgForOf, NgIf} from "@angular/common";
 import {Course} from "../INT/course";
 
-@Component({
-  selector: 'mock-contents',
-  standalone: true,
-  imports: [
-    NgForOf,
-    NgIf,
-    ContentListItemComponent,
-  ],
-  templateUrl: './content-list.component.html',
-})
-export class ContentListComponent {
-  courseList: Course[] = [];
-}
+export const courseList: Course[] = [
+  {name: "JavaScript Frameworks",description:"Programming with Angular",roomNumber:"A03306",floorNumber:0},
+  {name: "Java Programming",description:"Programming Java",roomNumber:"A0341",floorNumber:0},
+  {name: "Portfolio Development",description:"Making a portfolio",roomNumber:"A0214",floorNumber:0},
+  {name: "PHP & MYSQL",description:"Programming with MYSQL and PDO",roomNumber:"013",floorNumber:0},
+]
