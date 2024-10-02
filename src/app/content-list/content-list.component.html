@@ -1,6 +1,3 @@
-<div>
-  <app-content-list-item [courseList]="courseList"></app-content-list-item>
-  <app-content-list-item [courseList]="courseList"></app-content-list-item>
-  <app-content-list-item [courseList]="courseList"></app-content-list-item>
-  <app-content-list-item [courseList]="courseList"></app-content-list-item>
+<div *ngFor="let item of courseList">
+  <app-content-list-item>{{item}}</app-content-list-item>
 </div>

@@ -17,4 +17,5 @@ import {Course} from "../INT/course";
 })
 export class ContentListComponent {
   courseList: Course[] = [];
+  protected readonly NgForOf = NgForOf;
 }
