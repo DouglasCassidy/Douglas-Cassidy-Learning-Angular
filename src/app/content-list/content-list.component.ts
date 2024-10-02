@@ -16,5 +16,5 @@ import {Course} from "../INT/course";
   styleUrl: './content-list.component.css'
 })
 export class ContentListComponent {
-  courseList?: Course[] = [{body: "Detail 1"}]
+  courseList: Course[] = [];
 }

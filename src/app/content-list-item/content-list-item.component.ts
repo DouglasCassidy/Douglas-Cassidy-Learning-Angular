@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {AppComponent} from "../app.component";
-import {NgForOf, NgIf} from "@angular/common";
+import {NgForOf, NgIf, NgStyle} from "@angular/common";
 import {ContentListComponent} from "../content-list/content-list.component";
 import {Course} from "../INT/course";
 
@@ -12,7 +12,7 @@ import {Course} from "../INT/course";
     NgForOf,
     AppComponent,
     ContentListComponent,
-    NgIf
+    NgIf,
   ],
   templateUrl: './content-list-item.component.html',
   styleUrl: './content-list-item.component.css'
@@ -22,6 +22,11 @@ export class ContentListItemComponent {
 
 
   constructor() {
-    this.courseList = [{body: "Mad307"}]
-    }
+    this.courseList = [{
+      roomNumber: "A0336",
+      name: "Javascript Frameworks",
+      description: "Using angular to build web apps",
+      floorNumber: 0
+    }]
+  }
 }
