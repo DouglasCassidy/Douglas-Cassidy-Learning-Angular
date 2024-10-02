@@ -23,9 +23,9 @@ export class ContentListItemComponent {
 
   constructor() {
     this.courseList = [{
-      roomNumber: "A0336",
       name: "Javascript Frameworks",
       description: "Using angular to build web apps",
+      roomNumber: "A0336",
       floorNumber: 0
     }]
   }
