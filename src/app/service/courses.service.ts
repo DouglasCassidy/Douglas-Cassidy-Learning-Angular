@@ -6,33 +6,35 @@ import {Course} from "../INT/course";
   providedIn: 'root'
 })
 export class CoursesService {
-  private course: Course[] = courseList
+  private course: Course[] = courseList;
   constructor() { }
 
-  getCourse(): Observable<Course[]>{
-    return of (courseList);
+  // Search courses by ID
+  getCourseById(courseId: number): Observable<Course | undefined>{
+    const course = this.course.find(course => course.id === courseId);
+    return of(course);
   }
   // Add Course
   addCourse(newCourse:Course) : Observable<Course[]>{
     this.course.push(newCourse)
     return of(this.course);
   }
-
-  // Update existing course
-  updateCourse(updatedCourse: Course): Observable<Course[]>{
-    const index = this.course.findIndex(course => course.name === updatedCourse.name);
+  // Update an existing course
+  updateCourse(updatedCourse: Course): Observable<Course>{
+    const index = this.course.findIndex(course => course.id === updatedCourse.id);
     if(index !== -1){
       this.course[index] = updatedCourse;
     }
-    return of (this.course);
+    return of(updatedCourse);
   }
-  // Delete Course;
-  deleteCourse(courseString: string): Observable<Course[]>{
-    this.course = this.course.filter(courseName => courseName.name !== courseString);
-    return of(this.course);
+  // Delete courses
+  deleteCourse(courseId: number): Observable<Course[]> {
+    this.course = this.course.filter(course => course.id !== courseId)
+    return of(this.course)
   }
-  getCourseByFloor(courseFloor: number): Observable<Course | undefined>{
-    const course = this.course.find(courseName => courseName.floorNumber === courseFloor);
-    return of (course);
+  //Returns all Courses
+  getCourses(): Observable<Course[]>{
+    return of(courseList)
   }
+
 }

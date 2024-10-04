@@ -1,3 +1,24 @@
-<div *ngFor="let item of courseList">
-  <app-content-list-item>{{item}}</app-content-list-item>
+<div>
+  <h2>Course List</h2>
+  <app-content-list-item [course]="selectedCourse"></app-content-list-item>
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Course Name</th>
+      <th>Description</th>
+      <th>Course Room Number</th>
+      <th>Course Floor Number</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let course of courseList" (click)="selectCourse(course)">
+      <td>{{ course.id}}</td>
+      <td>{{ course.name}}</td>
+      <td>{{ course.description}}</td>
+      <td>{{ course.roomNumber}}</td>
+      <td>{{ course.floorNumber}}</td>
+    </tr>
+    </tbody>
+  </table>
 </div>

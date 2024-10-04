@@ -1,26 +1,7 @@
-<div class="courseItems" *ngFor="let course of courseList">
-  <ul>
-    <li>
-      <h3>Course Name:</h3>
-      <h5>{{course.name}}</h5>
-    </li>
-  </ul>
-  <ul>
-    <li>
-      <h3>Course Description:</h3>
-      <h5>{{course.description}}</h5>
-    </li>
-  </ul>
-  <ul>
-    <li>
-      <h3>Course Room Number:</h3>
-      <h5>{{course.roomNumber}}</h5>
-    </li>
-  </ul>
-  <ul>
-    <li>
-      <h3>Course Floor Number:</h3>
-      <h5>{{course.floorNumber}}</h5>
-    </li>
-  </ul>
+<div *ngIf="course" class="courseItems">
+  <ul>Course ID: {{ course.id }}</ul>
+  <ul>Course Name: {{ course.name }}</ul>
+  <ul>Course Description: {{ course.description }}</ul>
+  <ul>Course Floor Number: {{ course.floorNumber}}</ul>
+  <ul>Course Room Number: {{ course.roomNumber }}</ul>
 </div>

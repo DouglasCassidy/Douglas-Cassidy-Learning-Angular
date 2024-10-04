@@ -14,14 +14,9 @@ div{
   padding: 5px;
   background-image:linear-gradient(45deg, purple, red);
   color:white;
-  text-shadow: 5px 5px 5px black;
+  text-shadow: 3px 3px 3px black;
   box-shadow: 5px 5px 20px black;
   border-radius: 10px;
-}
-@media screen and (min-width:800px){
-  div{
-    flex-direction: row;
-  }
 }
 li{
   border: 2px solid white;
