@@ -3,7 +3,6 @@ import { RouterOutlet } from '@angular/router';
 import {ContentListComponent} from "./content-list/content-list.component";
 import {ContentListItemComponent} from "./content-list-item/content-list-item.component";
 import {CoursesService} from "./service/courses.service";
-import {courseList} from "./data/mock-contents";
 
 @Component({
   selector: 'app-root',
