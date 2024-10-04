@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable, Input} from '@angular/core';
 import {Observable, of} from "rxjs";
 import {courseList} from "../data/mock-contents";
 import {Course} from "../INT/course";
@@ -11,7 +11,7 @@ export class CoursesService {
 
   // Search courses by ID
   getCourseById(courseId: number): Observable<Course | undefined>{
-    const course = this.course.find(course => course.id === courseId);
+    const course: Course | undefined  = this.course.find(course => course.id === course.id);
     return of(course);
   }
   // Add Course
