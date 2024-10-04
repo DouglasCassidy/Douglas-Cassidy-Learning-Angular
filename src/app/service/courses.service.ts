@@ -20,12 +20,12 @@ export class CoursesService {
     return of(this.course);
   }
   // Update an existing course
-  updateCourse(updatedCourse: Course): Observable<Course>{
+  updateCourse(updatedCourse: Course): Observable<Course[]>{
     const index = this.course.findIndex(course => course.id === updatedCourse.id);
     if(index !== -1){
       this.course[index] = updatedCourse;
     }
-    return of(updatedCourse);
+    return of(this.course);
   }
   // Delete courses
   deleteCourse(courseId: number): Observable<Course[]> {
