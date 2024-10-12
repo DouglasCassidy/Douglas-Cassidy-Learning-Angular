@@ -1,9 +1,8 @@
 <div>
   <h2>Course List</h2>
-  <app-content-list-item [course]="selectedCourse"></app-content-list-item>
   <table>
     <thead>
-    <tr>
+    <tr id="table-cat">
       <th>ID</th>
       <th>Course Name</th>
       <th>Description</th>
@@ -12,7 +11,8 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let course of courseList" (click)="selectCourse(course)">
+    <tr class="item-list" *ngFor="let course of courseList"
+        [routerLink]="['/courses', course.id]">
       <td>{{ course.id}}</td>
       <td>{{ course.name}}</td>
       <td>{{ course.description}}</td>

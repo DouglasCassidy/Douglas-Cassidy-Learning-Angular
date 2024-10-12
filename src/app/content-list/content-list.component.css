@@ -1,2 +1,13 @@
-{
+table{
+  width: fit-content;
+  background-image:linear-gradient(purple, red);
+  padding: 10px;
+  margin: 10px;
+  border-radius: 0.5em;
+}
+th{
+  padding: 10px;
+}
+tr td{
+  padding: 10px;
 }

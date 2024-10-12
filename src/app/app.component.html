@@ -5,12 +5,16 @@
   </head>
 
   <body>
-  <h1>Learning Angular</h1>
-  <div>
-    <h1>{{firstName}} {{lastName}}</h1>
-    <div>
-      <app-content-list></app-content-list>
-    </div>
+  <div class="nav-bar">
+    <nav>
+      <a routerLink="/courses" routerLinkActive="active">Course List</a>
+      <a routerLink="/modify-course" routerLinkActive="active">Modify Course</a>
+    </nav>
   </div>
+
+  <div class="app-container">
+    <router-outlet></router-outlet>
+  </div>
+
   </body>
 </html>

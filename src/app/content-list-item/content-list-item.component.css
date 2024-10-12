@@ -1,12 +1,35 @@
 .courseItems{
   border:2px solid white;
   padding:10px;
-  margin: 10px 0;
   border-radius: 0.5em;
+}
+.courseItems ul{
+  padding: 10px;
+  box-shadow: 2px 2px 5px black;
 }
 .courseItems ul:nth-child(odd){
   background-image:linear-gradient(-352deg, blue,magenta);
 }
 .courseItems ul:nth-child(even){
   background-image:linear-gradient(92deg, darkred,crimson);
+}
+#back_button a{
+  color:white;
+  text-decoration: none;
+}
+#back_button a:hover{
+  color:lightcoral;
+}
+#back_button a:visited{
+  color:crimson;
+}
+#back_button a:active{
+  color:red;
+}
+figure {
+  display: flex;
+  background-image: linear-gradient(red, purple);
+  box-shadow: 2px 2px 5px black;
+  flex-direction: column;
+  vertical-align: middle;
 }

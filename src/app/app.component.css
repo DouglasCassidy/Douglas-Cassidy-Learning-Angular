@@ -28,3 +28,14 @@ li{
 ul{
   list-style-type: none;
 }
+nav a{
+  color:white;
+  padding: 5px;
+  text-decoration: none;
+  margin: 5px;
+}
+nav a:hover{
+  background-image:linear-gradient(45deg, purple, red);
+  outline:2px solid white;
+  padding: inherit;
+}
