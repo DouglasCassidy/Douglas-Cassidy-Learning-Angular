@@ -1,9 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 import {ContentListComponent} from "./content-list/content-list.component";
 import {ContentListItemComponent} from "./content-list-item/content-list-item.component";
 import {NgOptimizedImage} from "@angular/common";
-import {FormGroup} from "@angular/forms";
+
 
 @Component({
   selector: 'app-root',

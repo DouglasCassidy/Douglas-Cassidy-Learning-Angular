@@ -1,6 +1,5 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { provideRouter, Routes} from "@angular/router";
-import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
 import {ContentListComponent} from "./app/content-list/content-list.component";
 import {ContentListItemComponent} from "./app/content-list-item/content-list-item.component";
