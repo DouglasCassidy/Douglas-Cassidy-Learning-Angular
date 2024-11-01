@@ -3,9 +3,8 @@ import {ContentListItemComponent} from "../content-list-item/content-list-item.c
 import {NgForOf, NgIf, NgOptimizedImage} from "@angular/common";
 import {Course} from "../INT/course";
 import {CoursesService} from "../service/courses.service";
-import {ActivatedRoute, Router, RouterLink} from "@angular/router";
-import {FormGroup} from "@angular/forms";
-import {ModifyListComponent} from "../modify-list/modify-list.component";
+import {RouterLink} from "@angular/router";
+
 
 @Component({
   selector: 'app-content-list',
@@ -22,11 +21,8 @@ import {ModifyListComponent} from "../modify-list/modify-list.component";
 })
 export class ContentListComponent implements OnInit {
   courseList: Course[] = [];
-  courseForm!: FormGroup;
 
-  constructor(private courseServices: CoursesService,
-              private router: Router,
-              private route: ActivatedRoute) {
+  constructor(private courseServices: CoursesService){
 
   }
 
@@ -37,11 +33,5 @@ export class ContentListComponent implements OnInit {
       complete: () => console.log("Courses Fetched")
     })
 
-  }
-
-  selectedCourse?: Course;
-
-  selectCourse(course: Course): void {
-    this.selectedCourse = course;
   }
 }

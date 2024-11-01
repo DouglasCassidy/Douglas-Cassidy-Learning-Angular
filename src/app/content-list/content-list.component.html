@@ -20,9 +20,9 @@
       <td>
           <button id="edit_button" [routerLink]="['/modify-course', course.id]">Delete / Edit</button>
       </td>
-        <td>
-          <button id="delete_button" [routerLink]="['']">Delete</button>
-        </td>
+<!--
+Deleting and adding are only possible through the edit button, which also can delete items
+-->
     </tr>
     </tbody>
   </table>
