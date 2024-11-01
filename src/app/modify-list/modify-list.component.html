@@ -1,0 +1,49 @@
+<div class="container">
+  <form [formGroup]="courseForm">
+    <div class="form-group">
+      <label for="modify_course_id">Course ID:</label>
+      <input type="text"
+             class="form-control"
+             id="modify_course_id"
+             placeholder="Enter course ID"
+             formControlName="id"><br><br>
+    </div>
+    <div class="form-group">
+      <label for="modify_course_name">Course Name:</label>
+      <input type="text"
+             class="form-control"
+             id="modify_course_name"
+             placeholder="Enter course name"
+             formControlName="name"><br><br>
+    </div>
+    <div class="form-group">
+      <label for="modify_course_description">Course Description:</label>
+      <input type="text"
+             class="form-control"
+             id="modify_course_description"
+             placeholder="Enter course description"
+             formControlName="description"><br><br>
+    </div>
+    <div class="form-group">
+      <label for="modify_course_roomNumber">Room Number</label>
+      <input type="text"
+             class="form-control"
+             id="modify_course_roomNumber"
+             placeholder="Enter room number"
+             formControlName="roomNumber"><br><br>
+    </div>
+    <div class="form-group">
+      <label for="modify_course_roomFloor">Floor Room Number</label>
+      <input type="text"
+             class="form-control"
+             id="modify_course_roomFloor"
+             placeholder="Enter room floor number"
+             formControlName="floorNumber">
+    </div>
+    <div class="buttons"><br>
+      <button type="submit" (click)="onSubmit()">Submit</button><br><br>
+      <button type="button" (click)="onDelete()">Delete</button><br><br>
+      <button type="button" (click)="navigatetoCourseList()">Back to list</button>
+    </div>
+  </form>
+</div>

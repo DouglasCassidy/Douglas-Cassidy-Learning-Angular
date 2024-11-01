@@ -1,13 +1,4 @@
 <div *ngIf="course" class="courseItems">
-  <figure>
-  <img [ngSrc]="course.image"
-       alt="courseIcon"
-       height="100"
-       width="100"/>
-    <figcaption>
-      <p>Image Description: {{course.imageDescription}}</p>
-    </figcaption>
-  </figure>
   <ul>Course ID: {{ course.id }}</ul>
   <ul>Course Name: {{ course.name }}</ul>
   <ul>Course Description: {{ course.description }}</ul>

@@ -4,34 +4,32 @@ import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
 import {ContentListComponent} from "./app/content-list/content-list.component";
 import {ContentListItemComponent} from "./app/content-list-item/content-list-item.component";
-import {ModifyListItemComponent} from "./app/modify-list-item/modify-list-item.component";
 import {PageNotFoundComponent} from "./app/page-not-found/page-not-found.component";
-
-bootstrapApplication(AppComponent, appConfig)
-  .catch((err) => console.error(err));
+import {ModifyListComponent} from "./app/modify-list/modify-list.component";
 
 const routes: Routes = [
   {
-    path:'', redirectTo:"/courses", pathMatch:"full"
-  },
-  {
-    path:'courses', component: ContentListComponent
+    path: '',
+    redirectTo:"/courses",
+    pathMatch:"full"},
     // home page
-  },
   {
-    path:'courses/:id', component: ContentListItemComponent
-    //selected course
+    path:'courses',
+    component: ContentListComponent
   },
+    //selected course,
   {
-    path: 'modify-course', component: ModifyListItemComponent
+    path:'courses/:id',
+    component: ContentListItemComponent},
     // modify a course
-  },
   {
-    path: "**", component: PageNotFoundComponent
+    path: 'modify-course/:id',
+    component: ModifyListComponent},
     // page not found
-  }
+  {
+    path: "**",
+    component: PageNotFoundComponent},
 ]
-
 bootstrapApplication(AppComponent, {
   providers: [provideRouter(routes)]
 }).then(r => console.log("Boostrap Completed"));

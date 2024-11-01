@@ -1,9 +1,7 @@
-export interface Course{
+export interface Course {
   id: number,
-  name:string,
+  name: string,
   description: string,
   roomNumber: string,
-  floorNumber: number,
-  image: string,
-  imageDescription: string;
+  floorNumber: number
 }
