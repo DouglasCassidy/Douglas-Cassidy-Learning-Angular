@@ -15,6 +15,7 @@ import {Course} from "../INT/course";
 })
 export class ModifyListComponent implements OnInit {
   courseForm: FormGroup;
+  error: string | null = null;
   course: Course | undefined;
 
   constructor(
@@ -35,37 +36,41 @@ export class ModifyListComponent implements OnInit {
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     if(id){
-      this.courseServices.getCourseById(+id).subscribe(course => {
-        if(course){
-          this.course = course
-
-          this.courseForm.patchValue(course);
+      this.courseServices.getCourseById(id).subscribe({
+        next: course => {
+          if(course){
+            this.courseForm.patchValue(course);
+          }
+        },
+        error: err => {
+          this.error = "Error fetching course";
+          console.error("Error fetching course", err);
         }
       });
     }
   }
   onSubmit(): void {
-    const formCourse: Course = this.courseForm.value;
 
-    // check if updating a current course
-    if (formCourse.id) {
-      formCourse.id = this.courseServices.generateNewId();
-      this.courseServices.addCourse(formCourse)
-      this.router.navigate([`courses`]);
-    } else {
-      // For adding a new course, generate a new ID
-      this.courseServices.updateCourse(formCourse);
-      this.router.navigate([`courses`]);
+    if(this.courseForm.valid) {
+      const formCourse: Course = this.courseForm.value;
+
+      // check if updating a current course
+      if (formCourse.id) {
+        // For adding a new course, generate a new ID
+        this.courseServices.updateCourse(formCourse).subscribe(() => this.router.navigate(['/courses']));
+      } else {
+        this.courseServices.addCourse(formCourse).subscribe(() => this.router.navigate(['/courses']));
+      }
     }
+    console.log(this.courseForm);
   }
-  onDelete() {
-    const id = this.courseForm.get('id')?.value;
+  onDelete(): void {
+    const id = this.courseForm.value.id;
       if(id){
-        this.courseServices.deleteCourse(id);
-        this.router.navigate(['courses']);
+        this.courseServices.deleteCourse(id).subscribe(() => this.router.navigate(['/courses']));
     }
   }
   navigatetoCourseList(): void {
-    this.router.navigate(['courses']);
+    this.router.navigate(['/courses']);
   }
 }

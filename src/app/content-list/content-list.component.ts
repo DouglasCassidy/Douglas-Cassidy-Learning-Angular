@@ -4,6 +4,8 @@ import {NgForOf, NgIf, NgOptimizedImage} from "@angular/common";
 import {Course} from "../INT/course";
 import {CoursesService} from "../service/courses.service";
 import {RouterLink} from "@angular/router";
+import {InMemoryDbService} from "angular-in-memory-web-api";
+import {HttpClient} from "@angular/common/http";
 
 
 @Component({
@@ -21,17 +23,24 @@ import {RouterLink} from "@angular/router";
 })
 export class ContentListComponent implements OnInit {
   courseList: Course[] = [];
-
-  constructor(private courseServices: CoursesService){
-
-  }
+  error :string | null = null;
+  constructor(private courseServices: CoursesService){}
 
   ngOnInit() {
     this.courseServices.getCourses().subscribe({
-      next: (data: Course[]) => this.courseList = data,
-      error: err => console.log("error getting students", err),
-      complete: () => console.log("Courses Fetched")
-    })
-
+      next: (data: Course[]) => {
+        this.courseList = data;
+        this.error = null;
+      },
+      error: err => {
+        this.error = "Error fetching courses";
+        console.log("error fetching courses", err);
+      },
+      complete: () => console.log("done fetching courses")
+    });
+  }
+  selectedCourse?: Course;
+  selectCourse(course: Course){
+    this.selectedCourse = course;
   }
 }

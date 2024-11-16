@@ -5,6 +5,10 @@ import {ContentListComponent} from "./app/content-list/content-list.component";
 import {ContentListItemComponent} from "./app/content-list-item/content-list-item.component";
 import {PageNotFoundComponent} from "./app/page-not-found/page-not-found.component";
 import {ModifyListComponent} from "./app/modify-list/modify-list.component";
+import {provideHttpClient, withInterceptorsFromDi} from "@angular/common/http";
+import {HttpClientInMemoryWebApiModule, InMemoryDbService} from "angular-in-memory-web-api";
+import {InMemoryDataServiceService} from "./app/service/in-memory-data-service.service";
+import {importProvidersFrom} from "@angular/core";
 
 const routes: Routes = [
   {
@@ -30,5 +34,9 @@ const routes: Routes = [
     component: PageNotFoundComponent},
 ]
 bootstrapApplication(AppComponent, {
-  providers: [provideRouter(routes)]
+  providers: [
+    provideHttpClient(withInterceptorsFromDi()),
+    provideRouter(routes),
+    importProvidersFrom(HttpClientInMemoryWebApiModule.forRoot(InMemoryDataServiceService, {delay: 0}))
+  ],
 }).then(r => console.log("Boostrap Completed"));

@@ -7,9 +7,9 @@ import {Course} from "../INT/course";
 })
 export class InMemoryDataServiceService implements InMemoryDbService{
 
-  createDb():{courses: Course[]} {
+  createDb():{memoryCourseList: Course[]} {
 
-    const course: Course[] = [
+    const memoryCourse: Course[] = [
       {
         id: 1,
         name: "JavaScript Frameworks",
@@ -39,7 +39,7 @@ export class InMemoryDataServiceService implements InMemoryDbService{
         floorNumber: 0
       }
     ];
-    return {courses: course};
+    return {memoryCourseList: memoryCourse};
   }
 }
 
