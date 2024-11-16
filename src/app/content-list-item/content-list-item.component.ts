@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Course} from "../INT/course";
-import {NgIf, NgOptimizedImage} from "@angular/common";
+import {JsonPipe, LowerCasePipe, NgIf, NgOptimizedImage, UpperCasePipe} from "@angular/common";
 import {CoursesService} from "../service/courses.service";
 import {ActivatedRoute, Router, RouterLink} from "@angular/router";
 
@@ -11,6 +11,9 @@ import {ActivatedRoute, Router, RouterLink} from "@angular/router";
     NgIf,
     RouterLink,
     NgOptimizedImage,
+    LowerCasePipe,
+    UpperCasePipe,
+    JsonPipe,
   ],
   templateUrl: './content-list-item.component.html',
   styleUrl: './content-list-item.component.scss'

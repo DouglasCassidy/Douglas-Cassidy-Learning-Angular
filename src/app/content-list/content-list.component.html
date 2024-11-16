@@ -13,9 +13,10 @@
     <tbody>
       <tr class="item-list" *ngFor="let course of courseList">
       <td id="courseId">{{ course.id}}</td>
-      <td id="courseName" [routerLink]="['/courses', course.id]">{{ course.name}}</td>
-      <td id="courseDescription">{{ course.description}}</td>
-      <td id="roomNumber">{{ course.roomNumber}}</td>
+      <td id="courseName" [routerLink]="['/courses', course.id]">{{ course.name |lowercase}}</td>
+      <td id="courseDescription">{{ course.description | uppercase}}</td>
+      <td id="roomNumber">{{ course.roomNumber | json}}</td>
+
       <td id="floorNumber">{{ course.floorNumber}}</td>
       <td>
           <button id="edit_button" [routerLink]="['/modify-course', course.id]">Delete / Edit</button>

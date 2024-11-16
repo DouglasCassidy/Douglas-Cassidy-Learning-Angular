@@ -1,6 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import {ContentListItemComponent} from "../content-list-item/content-list-item.component";
-import {NgForOf, NgIf, NgOptimizedImage} from "@angular/common";
+import {
+  DatePipe,
+  DecimalPipe, JsonPipe,
+  KeyValuePipe, LowerCasePipe,
+  NgForOf,
+  NgIf,
+  NgOptimizedImage,
+  SlicePipe, TitleCasePipe,
+  UpperCasePipe
+} from "@angular/common";
 import {Course} from "../INT/course";
 import {CoursesService} from "../service/courses.service";
 import {RouterLink} from "@angular/router";
@@ -14,6 +23,14 @@ import {RouterLink} from "@angular/router";
     ContentListItemComponent,
     RouterLink,
     NgOptimizedImage,
+    UpperCasePipe,
+    DecimalPipe,
+    SlicePipe,
+    KeyValuePipe,
+    DatePipe,
+    LowerCasePipe,
+    TitleCasePipe,
+    JsonPipe,
   ],
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.css'
