@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Observable, of} from "rxjs";
+import {Observable} from "rxjs";
 import {courseList} from "../data/mock-contents";
 import {Course} from "../INT/course";
 import {HttpClient} from "@angular/common/http";
@@ -16,7 +16,7 @@ export class CoursesService {
     return this.http.get<Course[]>(this.apiUrl);
   }
   // Search courses by ID
-  getCourseById(id: string): Observable<Course>{
+  getCourseById(id: number): Observable<Course>{
     return this.http.get<Course>(`${this.apiUrl}/${id}`);
   }
   // Add A course

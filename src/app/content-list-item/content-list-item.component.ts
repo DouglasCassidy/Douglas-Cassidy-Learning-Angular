@@ -17,18 +17,18 @@ import {ActivatedRoute, Router, RouterLink} from "@angular/router";
 })
 export class ContentListItemComponent implements OnInit{
   course: Course | undefined;
-  currentIndex : number = 0;
   courseList: Course[] = [];
+  currentIndex : number = 0;
   error: string | null = null;
   constructor(private route: ActivatedRoute,
               private courseService: CoursesService,
               private router: Router
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void  {
     this.courseService.getCourses().subscribe({
-      next: (course: Course[]) => {
-        this.courseList = course;
+      next: (courses: Course[]) => {
+        this.courseList = courses;
         this.error =  null;
 
         this.route.paramMap.subscribe(params => {
@@ -39,7 +39,7 @@ export class ContentListItemComponent implements OnInit{
           }
         })
       },
-      error: err => {
+      error: (err) => {
         this.error = "Error Fetching Courses";
         console.error("Error fetching courses: ", err);
       }

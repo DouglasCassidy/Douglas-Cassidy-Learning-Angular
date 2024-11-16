@@ -4,9 +4,6 @@ import {NgForOf, NgIf, NgOptimizedImage} from "@angular/common";
 import {Course} from "../INT/course";
 import {CoursesService} from "../service/courses.service";
 import {RouterLink} from "@angular/router";
-import {InMemoryDbService} from "angular-in-memory-web-api";
-import {HttpClient} from "@angular/common/http";
-
 
 @Component({
   selector: 'app-content-list',

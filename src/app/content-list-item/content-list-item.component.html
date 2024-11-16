@@ -8,3 +8,6 @@
 <div id="back_button">
   <a [routerLink]="['']">Go back</a>
 </div>
+<div>
+  <p *ngIf="error" class="error">{{error}} </p>
+</div>

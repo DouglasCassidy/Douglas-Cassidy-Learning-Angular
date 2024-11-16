@@ -3,12 +3,14 @@ import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/
 import {ActivatedRoute, Router} from "@angular/router";
 import {CoursesService} from "../service/courses.service";
 import {Course} from "../INT/course";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-modify-list',
   standalone: true,
   imports: [
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgIf
   ],
   templateUrl: './modify-list.component.html',
   styleUrl: './modify-list.component.css'
@@ -34,7 +36,7 @@ export class ModifyListComponent implements OnInit {
   }
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id');
+    const id = Number(this.route.snapshot.paramMap.get('id'));
     if(id){
       this.courseServices.getCourseById(id).subscribe({
         next: course => {
@@ -50,16 +52,15 @@ export class ModifyListComponent implements OnInit {
     }
   }
   onSubmit(): void {
-
     if(this.courseForm.valid) {
-      const formCourse: Course = this.courseForm.value;
+      const course: Course = this.courseForm.value;
 
       // check if updating a current course
-      if (formCourse.id) {
+      if (course.id) {
         // For adding a new course, generate a new ID
-        this.courseServices.updateCourse(formCourse).subscribe(() => this.router.navigate(['/courses']));
+        this.courseServices.updateCourse(course).subscribe(() => this.router.navigate(['/courses']));
       } else {
-        this.courseServices.addCourse(formCourse).subscribe(() => this.router.navigate(['/courses']));
+        this.courseServices.addCourse(course).subscribe(() => this.router.navigate(['/courses']));
       }
     }
     console.log(this.courseForm);
