@@ -1,5 +1,5 @@
 <div class="container">
-  <form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="courseForm">
     <div class="form-group">
       <label for="modify_course_id">Course ID:</label>
       <input type="text"
@@ -41,7 +41,7 @@
              formControlName="floorNumber">
     </div>
     <div class="buttons"><br>
-      <button type="submit">Submit</button><br><br>
+      <button type="submit" (click)="onSubmit()">Submit</button><br><br>
       <button type="button" (click)="onDelete()">Delete</button><br><br>
       <button type="button" (click)="navigatetoCourseList()">Back to list</button>
     </div>

@@ -4,7 +4,6 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {CoursesService} from "../service/courses.service";
 import {Course} from "../INT/course";
 import {NgIf} from "@angular/common";
-
 @Component({
   selector: 'app-modify-list',
   standalone: true,
@@ -27,9 +26,9 @@ export class ModifyListComponent implements OnInit {
     private router: Router
   ) {
     this.courseForm = this.fb.group({
-      id: ['', Validators.required],
+      id: [courseServices.generateNewId(), Validators.required],
       name: ['', Validators.required],
-      description: ['', Validators.required],
+      description: [''],
       roomNumber: ['', Validators.required],
       floorNumber: ['', Validators.required],
     });
@@ -45,7 +44,7 @@ export class ModifyListComponent implements OnInit {
           }
         },
         error: err => {
-          this.error = "Error fetching course";
+          this.error = "[ERROR] Unable to fetch course. Either it was removed, or it doesn't exist.";
           console.error("Error fetching course", err);
         }
       });
@@ -60,6 +59,7 @@ export class ModifyListComponent implements OnInit {
         // For adding a new course, generate a new ID
         this.courseServices.updateCourse(course).subscribe(() => this.router.navigate(['/courses']));
       } else {
+        course.id = this.courseServices.generateNewId();
         this.courseServices.addCourse(course).subscribe(() => this.router.navigate(['/courses']));
       }
     }

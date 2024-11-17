@@ -1,9 +1,9 @@
 <div *ngIf="course" class="courseItems">
   <ul>Course ID: {{ course.id }}</ul>
-  <ul>Course Name: {{ course.name | lowercase }}</ul>
-  <ul>Course Description: {{ course.description | uppercase }}</ul>
+  <ul>Course Name: {{ course.name | lowercase}}</ul>
+  <ul>Course Description: {{ course.description | uppercase}}</ul>
   <ul>Course Room Number: {{ course.roomNumber | json }}</ul>
-  <ul>Course Floor Number: {{ course.floorNumber}}</ul>
+  <ul>Room Floor Number: {{ course.floorNumber | floorPipe }}</ul>
 </div>
 <div id="back_button">
   <a [routerLink]="['']">Go back</a>

@@ -7,7 +7,7 @@
       <th>Course Name</th>
       <th>Description</th>
       <th>Course Room Number</th>
-      <th>Course Floor Number</th>
+      <th>Room Floor Number</th>
     </tr>
     </thead>
     <tbody>
@@ -17,7 +17,8 @@
       <td id="courseDescription">{{ course.description | uppercase}}</td>
       <td id="roomNumber">{{ course.roomNumber | json}}</td>
 
-      <td id="floorNumber">{{ course.floorNumber}}</td>
+      <td id="floorNumber">{{course.floorNumber | floorPipe}}</td>
+
       <td>
           <button id="edit_button" [routerLink]="['/modify-course', course.id]">Delete / Edit</button>
       </td>

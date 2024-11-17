@@ -9,12 +9,12 @@ export class InMemoryDataServiceService implements InMemoryDbService{
 
   createDb():{courses: Course[]} {
 
-    const courses: Course[] = [
+    const course: Course[] = [
       {
         id: 1,
         name: "JavaScript Frameworks",
         description:"Programming with Angular",
-        roomNumber:"A0306",
+        roomNumber:"A0306" ,
         floorNumber:0
       },
       {
@@ -39,7 +39,7 @@ export class InMemoryDataServiceService implements InMemoryDbService{
         floorNumber: 0
       }
     ];
-    return { courses };
+    return { courses: course };
   }
 }
 

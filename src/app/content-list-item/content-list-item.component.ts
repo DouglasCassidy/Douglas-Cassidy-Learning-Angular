@@ -3,6 +3,7 @@ import {Course} from "../INT/course";
 import {JsonPipe, LowerCasePipe, NgIf, NgOptimizedImage, UpperCasePipe} from "@angular/common";
 import {CoursesService} from "../service/courses.service";
 import {ActivatedRoute, Router, RouterLink} from "@angular/router";
+import {FloorPipePipe} from "../pipes/floor-pipe.pipe";
 
 @Component({
   selector: 'app-content-list-item',
@@ -13,6 +14,7 @@ import {ActivatedRoute, Router, RouterLink} from "@angular/router";
     NgOptimizedImage,
     LowerCasePipe,
     UpperCasePipe,
+    FloorPipePipe,
     JsonPipe,
   ],
   templateUrl: './content-list-item.component.html',

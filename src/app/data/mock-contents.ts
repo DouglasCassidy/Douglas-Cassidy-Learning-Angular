@@ -1,6 +1,7 @@
 import {Course} from "../INT/course";
-//
+
 export const courseList: Course[] = [
+
   {
     id: 1,
     name: "JavaScript Frameworks",
@@ -15,18 +16,18 @@ export const courseList: Course[] = [
     roomNumber:"A0341",
     floorNumber:0,
   },
-  // {
-//     id: 3,
-//     name: "Portfolio Development",
-//     description: "Making a career portfolio",
-//     roomNumber: "A3216",
-//     floorNumber: 3
-//   },
-  // {
-//     id: 4,
-//     name: "PHP & MYSQL",
-//     description: "Programming with MYSQL and PDO",
-//     roomNumber: "A0306",
-//     floorNumber: 0
-//   }
+  {
+    id: 3,
+    name: "Portfolio Development",
+    description: "Making a career portfolio",
+    roomNumber: "A3216",
+    floorNumber: 3
+  },
+  {
+    id: 4,
+    name: "PHP & MYSQL",
+    description: "Programming with MYSQL and PDO",
+    roomNumber: "A0306",
+    floorNumber: 0
+  }
 ]

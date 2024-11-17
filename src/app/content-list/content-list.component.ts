@@ -1,18 +1,17 @@
 import {Component, OnInit} from '@angular/core';
 import {ContentListItemComponent} from "../content-list-item/content-list-item.component";
 import {
-  DatePipe,
-  DecimalPipe, JsonPipe,
-  KeyValuePipe, LowerCasePipe,
+  JsonPipe,
+  LowerCasePipe,
   NgForOf,
   NgIf,
   NgOptimizedImage,
-  SlicePipe, TitleCasePipe,
   UpperCasePipe
 } from "@angular/common";
 import {Course} from "../INT/course";
 import {CoursesService} from "../service/courses.service";
 import {RouterLink} from "@angular/router";
+import {FloorPipePipe} from "../pipes/floor-pipe.pipe";
 
 @Component({
   selector: 'app-content-list',
@@ -24,13 +23,9 @@ import {RouterLink} from "@angular/router";
     RouterLink,
     NgOptimizedImage,
     UpperCasePipe,
-    DecimalPipe,
-    SlicePipe,
-    KeyValuePipe,
-    DatePipe,
     LowerCasePipe,
-    TitleCasePipe,
     JsonPipe,
+    FloorPipePipe,
   ],
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.css'
@@ -55,6 +50,6 @@ export class ContentListComponent implements OnInit {
   }
   selectedCourse?: Course;
   selectCourse(course: Course){
-    this.selectedCourse = course;
+  this.selectedCourse = course;
   }
 }
