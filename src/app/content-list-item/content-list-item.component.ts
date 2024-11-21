@@ -4,7 +4,6 @@ import {JsonPipe, LowerCasePipe, NgIf, NgOptimizedImage, UpperCasePipe} from "@a
 import {CoursesService} from "../service/courses.service";
 import {ActivatedRoute, Router, RouterLink} from "@angular/router";
 import {FloorPipePipe} from "../pipes/floor-pipe.pipe";
-
 @Component({
   selector: 'app-content-list-item',
   standalone: true,

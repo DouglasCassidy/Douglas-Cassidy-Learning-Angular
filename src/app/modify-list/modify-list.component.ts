@@ -4,12 +4,14 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {CoursesService} from "../service/courses.service";
 import {Course} from "../INT/course";
 import {NgIf} from "@angular/common";
+import {HoverOnFocusDirective} from "../directives/hover-on-focus.directive";
 @Component({
   selector: 'app-modify-list',
   standalone: true,
   imports: [
     ReactiveFormsModule,
-    NgIf
+    NgIf,
+    HoverOnFocusDirective
   ],
   templateUrl: './modify-list.component.html',
   styleUrl: './modify-list.component.css'

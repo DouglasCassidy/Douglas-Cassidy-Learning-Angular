@@ -1,4 +1,5 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import {Pipe, PipeTransform} from '@angular/core';
+
 @Pipe({
   name: 'floorPipe',
   standalone: true
@@ -6,6 +7,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FloorPipePipe implements PipeTransform {
   transform(floorNumber: number): string{
     if(floorNumber == 0){
+
       return "Basement";
     }
     if(floorNumber == 1){

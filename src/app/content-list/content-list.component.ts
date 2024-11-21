@@ -12,6 +12,7 @@ import {Course} from "../INT/course";
 import {CoursesService} from "../service/courses.service";
 import {RouterLink} from "@angular/router";
 import {FloorPipePipe} from "../pipes/floor-pipe.pipe";
+import {HoverHighlightDirective} from "../directives/hover-highlight.directive";
 
 @Component({
   selector: 'app-content-list',
@@ -26,6 +27,7 @@ import {FloorPipePipe} from "../pipes/floor-pipe.pipe";
     LowerCasePipe,
     JsonPipe,
     FloorPipePipe,
+    HoverHighlightDirective,
   ],
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.css'
